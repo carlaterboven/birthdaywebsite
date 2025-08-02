@@ -1,0 +1,36 @@
+
+
+
+/* Körper der Startseite */
+.start-page {
+    background-color: black; /* Schwarzer Hintergrund */
+    color: white; /* Weißer Text */
+    margin: 0;
+    height: 100vh; /* Höhe des Viewports */
+    display: flex; /* Flexbox zur Zentrierung */
+    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center; /* Vertikale Zentrierung */
+    font-weight: bold; /* Optional: Fettgedruckt */
+}
+
+/* Zentrierter Textinhalt */
+.centered-content {
+    text-align: center; /* Text zentrieren */
+    line-height: 1.6; /* Angenehmer Zeilenabstand */
+}
+
+/* Styling für die Klammern */
+.brackets {
+    color: white; /* Farbe der Klammern */
+    font-weight: bold; /* Optional: Fettgedruckt */
+}
+
+/* Styling für den "continue"-Link */
+.continue-link {
+    color: white; /* Weißer Text */
+    text-decoration: none; /* Keine Unterstreichung im normalen Zustand */
+    font-weight: bold; /* Optional: Fettgedruckt */
+}
+
+
+

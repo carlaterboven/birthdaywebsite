@@ -1,0 +1,631 @@
+
+
+/* Visuals Section */
+section.visuals {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.visuals h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Großes Bild oben */
+.visuals-main {
+    text-align: center; /* Bild zentrieren */
+    margin-bottom: 30px;
+}
+
+.main-image {
+    max-width: 100%; /* Bild passt sich der Containerbreite an */
+    height: auto; /* Proportional skalieren */
+}
+
+/* Galerie mit flexiblem Grid */
+.visuals-gallery,
+.drawings-gallery {
+    display: grid;
+    gap: 100px; /* Abstand zwischen Bildern */
+}
+
+/* Standardlayout: 2 Spalten */
+.grid-2-cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Layout für 5 Spalten */
+.grid-5-cols {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+/* 5 Spalten: Für größere Bildschirme (z. B. Desktop im Vollbild) */
+@media (min-width: 1200px) {
+    .visuals-gallery,
+    .drawings-gallery {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* 4 Spalten: Für größere Bildschirme (z. B. Desktop im Vollbild) */
+@media (min-width: 950px) and (max-width: 1199px) {
+    .visuals-gallery,
+    .drawings-gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 3 Spalten: Für mittlere Bildschirme (z. B. Tablets, kleine Laptops) */
+@media (min-width: 768px) and (max-width: 950px) {
+    .visuals-gallery,
+    .drawings-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 2 Spalten: Für kleine Bildschirme (z. B. größere Smartphones) */
+@media (max-width: 767px) {
+    .visuals-gallery,
+    .drawings-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 1 Spalte: Für sehr kleine Bildschirme (z. B. ältere Smartphones) */
+@media (max-width: 480px) {
+    .visuals-gallery,
+    .drawings-gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.gallery-item img,
+.drawing-gallery-item img {
+    width: 100%; /* Bilder füllen ihre Spalten */
+    height: auto; /* Proportional skalieren */
+}
+
+/* Drawings Section */
+section.drawings {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.drawings h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+/* Hauptbox für Inhalte */
+section.mtcontent {
+    background-color: #f8f8f8; /* Weißer Hintergrund für die gesamte Box */
+    padding: 20px; /* Innenabstand zur weißen Box */
+    margin: 0; /* Kein externer Abstand */
+    border: none; /* Keine Umrandung */
+    box-shadow: none; /* Kein Schatten */
+    margin-top: 20px; /* Abstand nach oben (zwischen Navbar und Content) */
+}
+
+/* Projekt-Container */
+.mtproject {
+    column-count: 2; /* Zwei Spalten */
+    column-gap: 30px; /* Abstand zwischen den Spalten */
+    margin: 0;
+    padding: 0;
+    width: 100vw; /* Container nimmt die gesamte Breite des Viewports ein */
+    max-width: 100%; /* Verhindert Überschreiten der Bildschirmbreite */
+}
+
+/* Einzelnes Projekt */
+.mtproject-item {
+    position: relative; /* Beibehalten der relativen Positionierung für den Container */
+    width: 100%; /* Nimmt die volle Breite einer Spalte ein */
+    text-align: center; /* Zentriert den Text */
+    box-sizing: border-box; /* Bezieht Padding und Border in die Breitenberechnung ein */
+    margin-bottom: 50px; /* Abstand zwischen den Projekt-Items */
+    height: auto; /* Automatische Höhe für flexibles Layout */
+}
+
+/* Projektnummer */
+.mtproject-number {
+    font-size: 16px;
+    color: black;
+    position: absolute;
+    top: 0px; /* Abstand von oben */
+    left: 0px; /* Positioniert es etwas nach links */
+    text-decoration: none; /* Entfernt die Unterstreichung des Links */
+}
+
+/* Projektname */
+.mtproject-title {
+    opacity: 0; /* Unsichtbar */
+    transition: opacity 0.3s ease-in-out; /* Weiche Überblendung */
+    color: black; /* Immer schwarz */
+    text-decoration: none; /* Keine Unterstreichung */
+    position: relative; /* Normale Position innerhalb des Containers */
+    margin-top: -10px; /* Verhindert Abstand zwischen Bild und Titel */
+}
+
+/* Projektbeschreibung */
+.mtproject-description {
+    color: black; /* Immer schwarz */
+    text-decoration: none; /* Keine Unterstreichung */
+    position: relative; /* Normale Position innerhalb des Containers */
+    text-align: center; /* Zentriert den Text */
+    margin-top: px; /* Leichter Abstand zwischen Bild und Beschreibung */
+    margin-bottom: 0; /* Kein Abstand nach unten */
+}
+
+/* Beim Hover sichtbar machen */
+.mtproject-item:hover .mtproject-title {
+    opacity: 1; /* Titel sichtbar machen */
+}
+
+.mtproject-item:hover  {
+    opacity: 1; /* Beschreibung sichtbar machen */
+}
+
+.mtproject-link {
+    text-decoration: none; /* Entfernt die Unterstreichung */
+}
+
+/* Bild */
+.mtproject-image {
+    width: 100%; /* Bild füllt den Container aus */
+    height: auto; /* Seitenverhältnis beibehalten */
+    display: block; /* Entfernt unerwünschten Inline-Abstand */
+    margin-bottom: 0; /* Kein Abstand unter dem Bild */
+    margin-top: 0; /* Kein Abstand über dem Bild */
+    cursor: pointer; /* Ändert den Mauszeiger in einen Zeiger (Hand) */
+    position: relative; /* Ermöglicht das Überlagern von Titeln und Beschreibungen */
+}
+
+.mtcontent h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.mtcontent h2 a {
+    text-decoration: none; /* Standardmäßig keine Unterstreichung */
+    color: #333; /* Beibehaltung der Farbe */
+}
+
+/* Hover-Effekt für die Links bleibt schwarz */
+.next-links a:hover, .next-rechts a:hover {
+    color: black; /* Farbe bleibt schwarz */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Körper der Startseite */
+.start-page {
+    background-color: black; /* Schwarzer Hintergrund */
+    color: white; /* Weißer Text */
+    margin: 0;
+    height: 100vh; /* Höhe des Viewports */
+    display: flex; /* Flexbox zur Zentrierung */
+    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center; /* Vertikale Zentrierung */
+    font-weight: bold; /* Optional: Fettgedruckt */
+}
+
+/* Zentrierter Textinhalt */
+.centered-content {
+    text-align: center; /* Text zentrieren */
+    line-height: 1.6; /* Angenehmer Zeilenabstand */
+}
+
+/* Styling für die Klammern */
+.brackets {
+    color: white; /* Farbe der Klammern */
+    font-weight: bold; /* Optional: Fettgedruckt */
+}
+
+/* Styling für den "continue"-Link */
+.continue-link {
+    color: white; /* Weißer Text */
+    text-decoration: none; /* Keine Unterstreichung im normalen Zustand */
+    font-weight: bold; /* Optional: Fettgedruckt */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Scroll*/
+body.scroll-active menu{
+	margin-bottom: calc(8rem + 1em);
+}
+body.scroll-active #search-tags{
+	color: #a2a2a2;
+	pointer-events: none;
+}
+main.scroll{
+	padding: 0;
+}
+main.scroll .project .trigger,
+/* main.scroll ~ #top, */
+main.scroll ~ footer{
+	display: none !important;
+}
+main:not(.scroll) .project .thumbnail{
+	width: 100% !important;
+	height: auto !important;
+}
+main:not(.scroll) .project .thumbnail img{
+	height: auto !important;
+	background-repeat: no-repeat;
+background-size: contain;
+}
+/*Scroll Wrapper*/
+main:not(.scroll) + #scroll-wrapper{
+	display: none;
+}
+main.scroll + #scroll-wrapper{
+	width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+	right: 0;
+	bottom: 0;
+	overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+	z-index: 8;
+}
+.slide{
+	width: 100vw;
+	height: 50%;
+	position: relative;
+	opacity: 0;
+	z-index: 99;
+	pointer-events: none;
+}
+/* .slide:last-child{
+	height: 300px;
+} */
+/*Projects*/
+main.scroll .project .thumbnail{
+	position: fixed;
+	top: 50% !important;
+	left: 50% !important;
+    width: 100vw;
+	height: 100%;
+	display: flex !important;
+	justify-content: center;
+    align-items: center;
+	transform: translate(-50%, -50%);
+    pointer-events: none;
+	z-index: 1;
+}
+main.scroll .project:not(.active){
+	display: none;
+}
+main.scroll .project.active + .project{
+	display: block;
+}
+main.scroll .project.active .thumbnail{
+	display: flex !important;
+    	z-index: 3 !important;
+}
+main.scroll .project.first:not(.active) .thumbnail,
+main.scroll .project.active + .project .thumbnail{
+	width: 100vw !important;
+	height: 100vh !important;
+	display: flex !important;
+	z-index: 2;
+}
+main.scroll .thumbnail .thumb{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	object-fit: cover;
+}
+main.scroll .project.active + .project .thumbnail .thumb{
+	width: 100vw !important;
+    	height: 100vh !important;
+}
+main.scroll .thumbnail.horizontal .thumb{
+    	height: auto;
+}
+main.scroll .thumbnail.vertical .thumb{
+    	width: auto;
+}
+main.scroll .project.last .thumbnail{
+	width: 100vw !important;
+	height: 100vh !important;
+	display: flex !important;
+	z-index: 1;
+}
+main.scroll .project.last .thumbnail .thumb{
+	width: 100vw !important;
+	height: 100vh !important;
+}
+
+/* main.scroll .thumbnail img,
+main.scroll .thumbnail video{
+	object-fit: cover;
+} */
+/* main.scroll .project:not(.active) .thumb{
+    	width: 100% !important;
+    	height: 100% !important;
+}
+main:not(.scroll) .thumb,
+.last .thumb{
+	width: 100% !important;
+	height: 100% !important;
+} */
+
+main.scroll .project:nth-child(4n + 2) .thumbnail{
+	height: 100vh !important;
+	max-width: 100vw !important;
+	overflow: hidden;
+}
+main.scroll .project:nth-child(4n + 2) .thumbnail .thumb{
+	width: 100vw !important;
+	height: 100vh !important;
+}
+main.scroll .project:nth-child(4n + 4) .thumbnail{
+	width: 100vw !important;
+	max-height: 100vh !important;
+	overflow: hidden;
+}
+main.scroll .project:nth-child(4n + 4) .thumbnail .thumb{
+	width: 100vw !important;
+	height: 100vh !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Gepunktete Linie über der Navbar */
+.bottom-dotted-line {
+    bottom: 50px; /* Höhe der Navbar (40px) + 10px Abstand */
+    left: 20px;
+    margin: 20px 20px;
+    border: none;
+    border-top: 2px dotted black;
+}
+
+/* Navbar */
+.bottom-navbar {
+    display: flex;
+    justify-content: space-between; /* Elemente gleichmäßig verteilen */
+    align-items: center; /* Auf einer Linie ausrichten */
+    background-color: #f8f8f8;
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 100px;
+    font-size: 14px;
+    line-height: 1.8; /* Erhöht den Zeilenabstand */
+}
+
+/* Links in der Navbar */
+.bottom-navbar a {
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+/* Linker Bereich */
+.bottom-navbar-left {
+    flex: 1; /* Füllt den verfügbaren Platz links */
+    text-align: left;
+}
+
+.navbar-title {
+    font-weight: bold;
+    font-size: 16px; /* Optional: Größe etwas anpassen */
+}
+
+/* Rechter Bereich */
+.bottom-navbar-right {
+    flex: 1; /* Füllt den verfügbaren Platz rechts */
+    text-align: right;
+    position: relative; /* Ermöglicht die Verwendung von Pseudoelementen */
+}
+
+.bottom-navbar-right a {
+    display: block; /* Jeder Link wird auf eine neue Zeile gesetzt */
+}
+
+.bottom-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Statt center */
+    background-color: #f8f8f8;
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    font-size: 14px;
+    position: relative;
+}
+
+.bottom-navbar-center {
+    display: flex;
+    align-items: flex-start; /* Auch hier für bessere Anpassung */
+}
+
+
+
+
+
+
+
+
+
+
+.scroll-container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll-image-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s ease-out, opacity 0.3s ease-out;
+}
+
+.scroll-image-container.inactive {
+    opacity: 0;
+}
+
+.scroll-image-container.active {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 2;
+}
+
+.scroll-image-container.background {
+    transform: scale(1);
+    opacity: 1;
+    z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.scroll-container {
+    height: calc(100vh - 60px); /* 100% Höhe abzüglich Navbar */
+    margin-top: 30px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s ease-out, opacity 0.3s ease-out;
+}
+
+.image-container.inactive {
+    opacity: 0;
+}
+
+.image-container.active {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 2;
+}
+
+.image-container.background {
+    transform: scale(1);
+    opacity: 1;
+    z-index: -1;
+}
+
+
+
+
+.custom-checkbox {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    color:black;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    display: none; /* Originale Checkbox ausblenden */
+}
+
+.checkbox-mark::before {
+    content: "[ ]";
+    margin-right: 8px;
+    white-space: pre;
+}
+
+.custom-checkbox input:checked + .checkbox-mark::before {
+    content: "[X]";
+}
+
+
+

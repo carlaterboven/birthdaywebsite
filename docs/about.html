@@ -3,24 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Über diese Seite</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/mt_landingpage.css">
+    <title>Malte Terboven</title>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-        <h1>Über diese Seite</h1>
+        <nav class="navbar">
+            <!-- Linker Text -->
+            <!-- Linker Text -->
+          <span class="navbar-left">
+                <a href="mt.html">mt</a>
+            </span>
+            
+              <!-- Zentrierter Text -->
+            <span class="navbar-center">Contact</span>
+
+            <!-- Burger Menü -->
+            <input type="checkbox" id="toggle" class="toggle-checkbox">
+            <label for="toggle" class="burger"></label>
+             <!-- Das Symbol wird dynamisch über CSS hinzugefügt -->
+
+        <!-- Menüelemente -->
+        <ul class="menu">
+            <li class="spacer"></li> <!-- Leerzeile -->
+            <li><a href="projects_grid.html">projects</a></li>
+            <li><a href="about.html">representations</a></li>
+            <li><a href="#">publications</a></li>
+            <li><a href="about.html">about</a></li>
+            <li class="spacer"></li> <!-- Leerzeile -->
+        </ul>
     </header>
-    <main>
-        <section class="content">
-            <p>Diese Website ist ein Geschenk und wird für zwei Jahre kostenlos zur Verfügung gestellt. Ich helfe gerne bei der Pflege und Aktualisierung der Inhalte, damit du dich auf deine Architekturkarriere konzentrieren kannst.</p>
-        </section>
-    </main>
-    <script src="scripts.js"></script>
+<main>
+<section class="mtcontent">
+  <h3>Impressum</h3>
+  <p><strong>Angaben gemäß § 5 TMG</strong><br>
+    Malte Terboven<br>
+    Im Gier 6<br>
+    53604 Bad Honnef<br>
+    Deutschland
+  </p>
+
+  <p><strong>Kontakt</strong><br>
+    E-Mail: <a href="mailto:m-terboven@t-online.de">m-terboven@t-online.de</a>
+  </p>
+
+  <p><strong>Haftungsausschluss</strong><br>
+    Dies ist eine rein private, nicht-kommerzielle Website. Für die Inhalte externer Links wird keine Haftung übernommen. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+  </p>
+
+  <p><strong>Urheberrecht und Bildnutzung</strong><br>
+    © 2025 Malte Terboven. Einige Rechte vorbehalten.<br>
+    Veröffentlicht unter der Lizenz 
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">
+      Creative Commons BY-NC 4.0</a>.<br>
+    Eine nicht-kommerzielle Nutzung mit Namensnennung ist gestattet. Kommerzielle Nutzung nur nach vorheriger schriftlicher Zustimmung.
+  </p>
+</section>
+
+    
+    <!-- Gepunktete Linie -->
+    <div class="bottom-dotted-line"></div>
+
+<!-- Navbar unten -->
+<div class="bottom-navbar">
+    
+<!-- Linker Bereich -->
+<span class="bottom-navbar-left">
+    <span class="navbar-title">Malte Terboven</span><br>
+    m-terboven@t-online.de<br>
+    Basel, Berlin
+</span>
+
+<!-- Mittlerer Bereich -->
+<span class="bottom-navbar-center">©2025 Malte Terboven.<br>
+    Einige Rechte vorbehalten.<br>
+    Veröffentlicht unter CC BY-NC 4.0.</span>     
+
+<!-- Rechter Bereich -->
+<span class="bottom-navbar-right">
+<a href="https://www.instagram.com/malte.terboven/">Instagram</a>
+<a href="https://www.linkedin.com/in/malteterboven/">LinkedIn</a>
+</span>
+</div>
+
+
+
+
+
+
+              
+
+                 
+                
+</main>
+<script src="scripts.js"></script>
 </body>
 </html>
