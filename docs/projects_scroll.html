@@ -6,80 +6,78 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/project_scroll.css">
     <link rel="stylesheet" href="css/project.css">
-    <title>Malte Terboven</title>
 </head>
 <body>
+    <div id="mobile-warning">
+        ⚠️ This part of the website is designed for desktop use only. Please visit on a larger screen.
+    </div>
     <header>
         <nav class="navbar">
             <!-- Linker Text -->
-          <span class="navbar-left">
+            <span class="navbar-left">
                 <a href="mt.html">mt</a>
             </span>
-           
-        
-        
-        
-        
-        <!-- Zentrierter Text -->
-        <div class="navbar-center"> 
-            <!-- Grid -->
-            <div id="grid">
-                <a href="projects_grid.html">
-                    <span class="close-icon">[<span class="cross">X</span>]</span>
-                    <span>Grid</span>
-                </a>
+            <!-- Zentrierter Text -->
+            <div class="navbar-center"> 
+                <!-- Grid -->
+                <div id="grid">
+                    <a href="projects_grid.html">
+                        <span class="close-icon">[<span class="cross">X</span>]</span>
+                        <span>Grid</span>
+                    </a>
+                </div>
+                <!-- Scroll -->
+                <div id="scroll" class="active">
+                    <a href="projects_scroll.html">
+                        <span class="close-icon">[<span class="cross">X</span>]</span>
+                        <span>Scroll</span>
+                    </a>
+                </div>
             </div>
-            <!-- Scroll -->
-            <div id="scroll" class="active">
-                <a href="projects_scroll.html">
-                    <span class="close-icon">[<span class="cross">X</span>]</span>
-                    <span>Scroll</span>
-                </a>
+            
+            <!-- Auswahl Bilder 2. Reihe-->
+            <div id="filterBar" class="filter-bar">
+                <label class="custom-checkbox">
+                    <input type="checkbox" value="visualisations" checked>
+                    <span class="checkbox-mark"></span> Visualisations
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" value="plans" checked>
+                    <span class="checkbox-mark"></span> Plans
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" value="sections" checked>
+                    <span class="checkbox-mark"></span> Sections
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" value="pictograms" checked>
+                    <span class="checkbox-mark"></span> Pictograms
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" value="evaluations" checked>
+                    <span class="checkbox-mark"></span> Evaluations
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" value="modelPhotos" checked>
+                    <span class="checkbox-mark"></span> Model Photos
+                </label>
             </div>
-        </div>
-        <!-- Auswahl Bilder 2. Reihe-->
-        <div id="filterBar" class="filter-bar">
-            <label class="custom-checkbox">
-                <input type="checkbox" value="visualisations" checked>
-                <span class="checkbox-mark"></span> Visualisations
-            </label>
-            <label class="custom-checkbox">
-                <input type="checkbox" value="plans" checked>
-                <span class="checkbox-mark"></span> Plans
-            </label>
-            <label class="custom-checkbox">
-                <input type="checkbox" value="sections" checked>
-                <span class="checkbox-mark"></span> Sections
-            </label>
-            <label class="custom-checkbox">
-                <input type="checkbox" value="pictograms" checked>
-                <span class="checkbox-mark"></span> Pictograms
-            </label>
-            <label class="custom-checkbox">
-                <input type="checkbox" value="evaluations" checked>
-                <span class="checkbox-mark"></span> Evaluations
-            </label>
-            <label class="custom-checkbox">
-                <input type="checkbox" value="modelPhotos" checked>
-                <span class="checkbox-mark"></span> Model Photos
-            </label>
-        </div>
-        
-        
-        <!-- Burger Menü -->
+            
+            <!-- Burger Menü -->
             <input type="checkbox" id="toggle" class="toggle-checkbox">
             <label for="toggle" class="burger"></label>
-             <!-- Das Symbol wird dynamisch über CSS hinzugefügt -->
+            <!-- Das Symbol wird dynamisch über CSS hinzugefügt -->
 
-        <!-- Menüelemente -->
-        <ul class="menu">
-            <li class="spacer"></li> <!-- Leerzeile -->
-            <li><a href="projects_grid.html">projects</a></li>
-            <li><a href="about.html">representations</a></li>
-            <li><a href="#">publications</a></li>
-            <li><a href="about.html">about</a></li>
-            <li class="spacer"></li> <!-- Leerzeile -->
-        </ul>
+            <!-- Menüelemente -->
+            <ul class="menu">
+                <li class="spacer"></li> <!-- Leerzeile -->
+                <li><a href="projects_grid.html">projects</a></li>
+                <li><a href="about.html">representations</a></li>
+                <li><a href="#">publications</a></li>
+                <li><a href="about.html">about</a></li>
+                <li class="spacer"></li> <!-- Leerzeile -->
+            </ul>
+        </nav>
     </header>
     
     <script src="scripts/image_management.js"></script>

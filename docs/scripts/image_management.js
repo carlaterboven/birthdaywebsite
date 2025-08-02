@@ -13,13 +13,13 @@ const manageImageList = {
         "buildingBridges/plans/modular-system.jpg",
     ],
     sections: [
-        "buildingBridges/plans/self-sufficient.jpg",
+        "buildingBridges/sections/self-sufficient.jpg",
     ],
     pictograms: [
         "buildingBridges/pictograms/exploded-diagram.jpg",
         "buildingBridges/pictograms/material-reuse.jpg",
         "buildingBridges/pictograms/refugee-routes.jpg",
-        "buildingBridges/pictograms/trucklosd.jpg",
+        "buildingBridges/pictograms/truckload.jpg",
     ],
     evaluations: [
 
