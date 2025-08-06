@@ -8,6 +8,8 @@ const manageImageList = {
         "calmont/1_visualisations/Render-Hof.jpg",
         "coralScraper/1_visualisations/coral-scraper.jpg",
         "school/1_visualisations/school-exterior.jpg"
+        "school/1_visualisations/interior-cluster.jpg"
+        "school/1_visualisations/interior-ground-floor.jpg"
     ],
     plans: [
         "buildingBridges/plans/bridge-topography.jpg",
@@ -17,23 +19,35 @@ const manageImageList = {
         "calmont/plans/Grundriss-OG.jpg",
         "calmont/plans/Lageplan-500.jpg",
         "calmont/plans/Schwarzplan-5000.jpg",
+        "school/plans/context.jpg",
+        "school/plans/site-plan.jpg",
+        "school/plans/ground-floor.jpg",
+        "school/plans/first-floor.jpg",
     ],
     sections: [
         "buildingBridges/sections/self-sufficient.jpg",
         "calmont/sections/Schnitt-AA.jpg",
         "calmont/sections/Schnitt-BB.jpg",
+        "school/sections/section-AA.jpg",
+        "school/sections/section-BB.jpg",
     ],
     pictograms: [
         "buildingBridges/pictograms/exploded-diagram.jpg",
         "buildingBridges/pictograms/material-reuse.jpg",
         "buildingBridges/pictograms/refugee-routes.jpg",
         "buildingBridges/pictograms/truckload.jpg",
+        "school/pictograms/access-axis.jpg",
+        "school/pictograms/explosion.jpg",
     ],
     elevations: [
         "calmont/elevations/Nordansicht.jpg",
         "calmont/elevations/Ostansicht.jpg",
         "calmont/elevations/Suedansicht.jpg",
+        "school/elevations/north-elevation.jpg",
         "calmont/elevations/Westansicht.jpg",
+        "school/elevations/east-elevation.jpg",
+        "school/elevations/south-elevation.jpg",
+        "school/elevations/west-elevation.jpg",
     ],
     modelPhotos: [
         "calmont/modelPhotos/Modell-200.jpg",
