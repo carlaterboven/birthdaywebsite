@@ -24,6 +24,8 @@ const manageImageList = {
         "school/plans/site-plan.jpg",
         "school/plans/ground-floor.jpg",
         "school/plans/first-floor.jpg",
+        "coralScraper/plans/floor-plan_overwater.jpg",
+        "coralScraper/plans/floor-plan_underwater.jpg",
     ],
     sections: [
         "buildingBridges/sections/self-sufficient.jpg",
@@ -31,6 +33,7 @@ const manageImageList = {
         "calmont/sections/Schnitt-BB.jpg",
         "school/sections/section-AA.jpg",
         "school/sections/section-BB.jpg",
+        "coralScraper/sections/section.jpg",
     ],
     pictograms: [
         "buildingBridges/pictograms/exploded-diagram.jpg",
@@ -39,6 +42,11 @@ const manageImageList = {
         "buildingBridges/pictograms/truckload.jpg",
         "school/pictograms/access-axis.jpg",
         "school/pictograms/explosion.jpg",
+        "coralScraper/pictograms/above-water.jpg",
+        "coralScraper/pictograms/underneath-water.jpg",
+        "coralScraper/pictograms/order-in-disorder.jpg",
+        "coralScraper/pictograms/axo.jpg",
+        "coralScraper/pictograms/modules.jpg",
     ],
     elevations: [
         "calmont/elevations/Nordansicht.jpg",
