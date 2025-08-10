@@ -7,9 +7,10 @@ const manageImageList = {
         "calmont/1_visualisations/Render-Foyer.jpg",
         "calmont/1_visualisations/Render-Hof.jpg",
         "coralScraper/1_visualisations/coral-scraper.jpg",
-        "school/1_visualisations/school-exterior.jpg"
-        "school/1_visualisations/interior-cluster.jpg"
-        "school/1_visualisations/interior-ground-floor.jpg"
+        "school/1_visualisations/school-exterior.jpg",
+        "school/1_visualisations/interior-cluster.jpg",
+        "school/1_visualisations/interior-ground-floor.jpg",
+        "uglyChair/1_visualisations/uglyChair.jpg",
     ],
     plans: [
         "buildingBridges/plans/bridge-topography.jpg",
