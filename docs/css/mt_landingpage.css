@@ -11,12 +11,11 @@ section.mtcontent {
 
 /* Projekt-Container */
 .mtproject {
-    column-count: 2; /* Zwei Spalten */
-    column-gap: 30px; /* Abstand zwischen den Spalten */
-    margin: 0;
-    padding: 0;
-    width: 100vw; /* Container nimmt die gesamte Breite des Viewports ein */
-    max-width: 100%; /* Verhindert Überschreiten der Bildschirmbreite */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Zwei Spalten */
+    gap: 30px; /* Abstand zwischen den Spalten */
+    width: 100%;
+    max-width: 100%;
 }
 
 /* Einzelnes Projekt */
@@ -29,24 +28,20 @@ section.mtcontent {
     height: auto; /* Automatische Höhe für flexibles Layout */
 }
 
-/* Projektnummer */
 .mtproject-number {
     font-size: 16px;
     color: black;
-    position: absolute;
-    top: 0px; /* Abstand von oben */
-    left: 0px; /* Positioniert es etwas nach links */
-    text-decoration: none; /* Entfernt die Unterstreichung des Links */
+    text-decoration: none;
+    position: static; /* statt absolute */
+    display: inline-block; /* nebeneinander mit Titel */
+    margin-right: 8px; /* Abstand zum Titel */
+    vertical-align: middle; /* saubere Ausrichtung */
 }
 
-/* Projektname */
 .mtproject-title {
-    opacity: 0; /* Unsichtbar */
-    transition: opacity 0.3s ease-in-out; /* Weiche Überblendung */
-    color: black; /* Immer schwarz */
-    text-decoration: none; /* Keine Unterstreichung */
-    position: relative; /* Normale Position innerhalb des Containers */
-    margin-top: -10px; /* Verhindert Abstand zwischen Bild und Titel */
+    opacity: 1; /* Immer sichtbar */
+    display: inline-block; /* nebeneinander mit Nummer */
+    vertical-align: middle;
 }
 
 /* Projektbeschreibung */
