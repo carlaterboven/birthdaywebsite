@@ -11,10 +11,10 @@ section.steckbrief {
 /* Hauptbox für Inhalte */
 section.text {
     background-color: #f8f8f8; /* Weißer Hintergrund für die gesamte Box */
-    padding-left: 20px; /* Innenabstand zur weißen Box */
+    padding: 20px; /* Innenabstand zur weißen Box */
     margin: 0; /* Kein externer Abstand */
     border: none; /* Keine Umrandung */
     box-shadow: none; /* Kein Schatten */
     margin-top: 0px; /* Abstand nach oben (zwischen Navbar und Content) */
+    line-height: 1.5; /* Erhöhter Zeilenabstand */
 }
-
