@@ -8,13 +8,52 @@ section.steckbrief {
     margin-top: 20px; /* Abstand nach oben (zwischen Navbar und Content) */
 }
 
-/* Hauptbox für Inhalte */
+
+
+
+
 section.text {
-    background-color: #f8f8f8; /* Weißer Hintergrund für die gesamte Box */
-    padding: 20px; /* Innenabstand zur weißen Box */
-    margin: 0; /* Kein externer Abstand */
-    border: none; /* Keine Umrandung */
-    box-shadow: none; /* Kein Schatten */
-    margin-top: 0px; /* Abstand nach oben (zwischen Navbar und Content) */
-    line-height: 1.5; /* Erhöhter Zeilenabstand */
+  background-color: #f8f8f8;
+  padding: 20px;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  margin-top: 0;
+  line-height: 1.5;
 }
+
+section.text details > summary {
+  list-style: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  display: inline;          /* Symbol direkt hinter dem Text */
+  word-break: break-word;
+  line-height: 1.5;
+}
+section.text details > summary::-webkit-details-marker { display: none; }
+
+/* Plus/Minus direkt hinter dem Text, ohne Leerzeichen */
+section.text details > summary::after {
+  content: "[more]";
+  font-weight: 700;
+}
+section.text details[open] > summary::after {
+  content: "[less]";
+  font-weight: 700;
+}
+
+/* WICHTIG: keine Lücke durch Standard-Absatzabstände */
+section.text details > p { 
+  margin-top: 0;            /* oberen Absatzabstand entfernen */
+}
+
+/* Falls du noch andere Elemente als p nutzt: */
+section.text details > *:not(summary):first-child {
+  margin-top: 0;            /* erstes Folge-Element ohne Top-Margin */
+}
+
+/* unseren früheren Abstand entfernen */
+/* (löschen, falls vorhanden)
+section.text details[open] > *:not(summary) { margin-top: 12px; }
+*/

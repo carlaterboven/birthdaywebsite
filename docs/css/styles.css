@@ -14,8 +14,38 @@ html, body {
 
 
 /* Allgemeine Einstellungen */
+/* Regular 400 */
+@font-face {
+  font-family: "SimplonRegular";
+  src: url("../fonts/simplon-web-files/SimplonMono-Regular-WebS.woff2") format("woff2"),
+       url("../fonts/simplon-web-files/SimplonMono-Regular-WebS.woff") format("woff"); /* optional */
+  font-weight: 400;
+  font-style: regular;
+  font-display: swap;
+}
+
+/* Light 300 */
+@font-face {
+  font-family: "SimplonLight";
+  src: url("../fonts/simplon-web-files/SimplonMono-Light-WebS.woff2") format("woff2"),
+       url("../fonts/simplon-web-files/SimplonMono-Light-WebS.woff") format("woff"); /* optional */
+  font-weight: 300;
+  font-style: light;
+  font-display: swap;
+}
+
+/* Bold 700 */
+@font-face {
+  font-family: "SimplonBold";
+  src: url("../fonts/simplon-web-files/SimplonMono-Bold-WebS") format("woff2"),
+       url("../fonts/meinfont-bold.woff") format("woff"); /* optional */
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
+
 body {
-    font-family: Consolas, sans-serif;
+    font-family: "SimplonLight", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
@@ -54,7 +84,6 @@ nav {
     background-color: #f8f8f8;
     color: black;
     padding:10px 20px;
-    font-weight: bold; /* Macht alle Texte in der Navbar fett */
     height: 30px; /* Setzt die Höhe der Navbar */
     background-color: transparent; /* Unsichtbarer Hintergrund */
     z-index: 11; /* Noch höherer Wert für die Sicherheit */
@@ -84,7 +113,6 @@ nav {
 .navbar-left a {
     text-decoration: none; /* Keine Unterstreichung im normalen Zustand */
     color: black; /* Textfarbe schwarz */
-    font-weight: bold; /* Text fett */
     position: relative; /* Ermöglicht die Positionierung des neuen Textes */
     cursor: pointer; /* Zeigt interaktives Verhalten */
 }
@@ -119,7 +147,6 @@ nav {
 .navbar-right a {
     text-decoration: none; /* Keine Unterstreichung im normalen Zustand */
     color: black; /* Textfarbe schwarz */
-    font-weight: bold; /* Text fett */
     position: relative; /* Ermöglicht die Positionierung des neuen Textes */
     cursor: pointer; /* Zeigt interaktives Verhalten */
 }
@@ -301,7 +328,6 @@ nav {
 }
 
 .navbar-title {
-    font-weight: bold;
     font-size: 16px; /* Optional: Größe etwas anpassen */
 }
 
