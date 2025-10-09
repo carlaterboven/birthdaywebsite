@@ -291,71 +291,81 @@ nav {
 
 
 
-/* Basis: Sticky Footer Layout */
+/* Basislayout für Sticky Footer */
 html, body {
   height: 100%;
-}
-body {
-  min-height: 100svh;         /* viewport-Height inkl. Mobile-Safe-Area */
-  display: flex;
-  flex-direction: column;
   margin: 0;
 }
 
-/* Inhalt füllt den Platz, Footer schiebt sich an das Ende */
+body {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
 .page-content {
   flex: 1 0 auto;
 }
 
-/* Footer */
+/* === Footer === */
 .bottom-navbar {
-  margin-top: auto;            /* schiebt Footer nach unten */
-  display: flex;
-  gap: 16px;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 24px 20px 40px;     /* extra bottom padding */
-  font-size: 14px;
-  line-height: 1.8;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
+  gap: 14px;
+  align-items: start;
+  padding: 22px 18px 36px;
+  line-height: 1.7;
   color: #000;
   background: #f8f8f8;
-  border-top: 2px dotted #000; /* ← die gepunktete Linie */
+  border-top: 2px dotted #000;
+
+  /* Container Query aktivieren */
+  container-type: inline-size;
+  container-name: footer;
+
+  /* Fallback-Schriftgröße (funktioniert überall) */
+  font-size: clamp(9px, 1vw, 13px);
+  transition: font-size 0.2s ease;
 }
 
-/* Spalten im Footer */
+/* Spaltenverhalten */
 .bottom-navbar-left,
 .bottom-navbar-center,
 .bottom-navbar-right {
-  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
 }
 
-.bottom-navbar-left { text-align: left; }
-.bottom-navbar-center { text-align: center; }
-.bottom-navbar-right { text-align: right; }
+.bottom-navbar-left   { justify-self: start;  text-align: left; }
+.bottom-navbar-center { justify-self: center; text-align: center; }
+.bottom-navbar-right  { justify-self: end;    text-align: right; }
 
-.navbar-title { font-size: 16px; }
+.navbar-title {
+  font-weight: bold;
+}
 
 .bottom-navbar a {
-  display: block;              /* jede Zeile separat */
+  display: block;
   text-decoration: none;
   color: #000;
-  font-size: 16px;
 }
 
-/* Responsive Feinschliff */
-@media (max-width: 800px) {
-  .bottom-navbar {
-    flex-direction: column;
-    text-align: left;
-    gap: 8px;
-  }
-  .bottom-navbar-left,
-  .bottom-navbar-center,
-  .bottom-navbar-right {
-    text-align: left;
-  }
+/* === Container-Queries: reagieren auf tatsächliche Footer-Breite === */
+@container footer (max-width: 900px) {
+  .bottom-navbar { font-size: 14px; }
 }
 
+@container footer (max-width: 700px) {
+  .bottom-navbar { font-size: 14px; gap: 10px; }
+}
 
+@container footer (max-width: 550px) {
+  .bottom-navbar { font-size: 14px; gap: 6px; padding: 16px 8px 24px; }
+}
 
+@container footer (max-width: 420px) {
+  .bottom-navbar { font-size: 10px; }
+}
 
