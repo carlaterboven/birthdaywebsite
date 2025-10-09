@@ -308,6 +308,12 @@ body {
 }
 
 /* === Footer === */
+footer {
+  /* Container Query aktivieren */
+  container-type: inline-size;
+  container-name: footer;
+}
+
 .bottom-navbar {
   display: grid;
   grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
@@ -318,10 +324,6 @@ body {
   color: #000;
   background: #f8f8f8;
   border-top: 2px dotted #000;
-
-  /* Container Query aktivieren */
-  container-type: inline-size;
-  container-name: footer;
 
   /* Fallback-Schriftgröße (funktioniert überall) */
   font-size: clamp(9px, 1vw, 13px);
@@ -354,18 +356,19 @@ body {
 
 /* === Container-Queries: reagieren auf tatsächliche Footer-Breite === */
 @container footer (max-width: 900px) {
-  .bottom-navbar { font-size: 14px; }
+  .bottom-navbar { font-size: 15px; } 
 }
 
 @container footer (max-width: 700px) {
-  .bottom-navbar { font-size: 14px; gap: 10px; }
+  .bottom-navbar { font-size: 13px; gap: 10px; }
 }
 
 @container footer (max-width: 550px) {
-  .bottom-navbar { font-size: 14px; gap: 6px; padding: 16px 8px 24px; }
+  .bottom-navbar { font-size: 11px; gap: 6px; padding: 16px 8px 24px; } 
 }
 
 @container footer (max-width: 420px) {
   .bottom-navbar { font-size: 10px; }
 }
+
 
