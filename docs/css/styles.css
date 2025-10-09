@@ -56,6 +56,16 @@ body {
   color: white;
 }
 
+/* Globaler Link-Reset */
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;        /* oder: color: black; */
+}
+
+
 /* Header */
 header {
     height: 10px;
@@ -307,6 +317,8 @@ body {
   flex: 1 0 auto;
 }
 
+
+
 /* === Footer === */
 footer {
   /* Container Query aktivieren */
@@ -315,6 +327,7 @@ footer {
 }
 
 .bottom-navbar {
+  position: relative; /* wichtig für das ::before-Pseudo-Element */
   display: grid;
   grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
   gap: 14px;
@@ -323,12 +336,34 @@ footer {
   line-height: 1.7;
   color: #000;
   background: #f8f8f8;
-  border-top: 2px dotted #000;
 
   /* Fallback-Schriftgröße (funktioniert überall) */
-  font-size: clamp(9px, 1vw, 13px);
+  font-size: clamp(8px, 1vw, 13px);
   transition: font-size 0.2s ease;
 }
+
+/* Echte runde Punktlinie mit kontrollierbarer Breite + Höhe */
+.bottom-navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px; /* Gesamthöhe des Bereichs, in dem die Punkte sitzen */
+  background: repeating-radial-gradient(
+    circle at 0 50%,
+    #000 0 1px,       /* Punktgröße: 1.5px Radius → ergibt 3px Durchmesser */
+    transparent 1px 4px  /* Abstand: alle 12px ein neuer Punkt */
+  );
+  background-size: 12px 1px; /* horizontale & vertikale Wiederholung */
+  background-repeat: repeat-x;
+}
+
+
+
+
+
+
 
 /* Spaltenverhalten */
 .bottom-navbar-left,
@@ -364,11 +399,11 @@ footer {
 }
 
 @container footer (max-width: 550px) {
-  .bottom-navbar { font-size: 11px; gap: 6px; padding: 16px 8px 24px; } 
+  .bottom-navbar { font-size: 10px; gap: 6px; padding: 16px 8px 24px; } 
 }
 
 @container footer (max-width: 420px) {
-  .bottom-navbar { font-size: 10px; }
+  .bottom-navbar { font-size: 9px; }
 }
 
 
