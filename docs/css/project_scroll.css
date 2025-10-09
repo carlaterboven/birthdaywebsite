@@ -249,12 +249,34 @@ main.scroll .project:nth-child(4n + 4) .thumbnail .thumb{
 
 
 
+#filterBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;                /* KEIN Umbruch */
+    gap: 20px;
+
+    padding: 10px min(5vw, 40px);     /* dynamischer Seitenabstand */
+    box-sizing: border-box;
+    background: white;
+    z-index: 100;
+
+    font-size: clamp(10px, 1vw, 18px); /* schrumpft stärker bei kleinen Fenstern */
+    white-space: nowrap;              /* kein Zeilenumbruch */
+    overflow: hidden;                 /* Überstände abschneiden */
+}
+
 .custom-checkbox {
-    position: relative;
     display: inline-flex;
     align-items: center;
+    white-space: nowrap;            /* Text bleibt in einer Zeile */
     cursor: pointer;
-    color:black;
+    color: black;
 }
 
 .custom-checkbox input[type="checkbox"] {
