@@ -1,8 +1,7 @@
-
 /* Hauptbox für Inhalte */
 section.mtcontent {
     background-color: #f8f8f8; /* Weißer Hintergrund für die gesamte Box */
-    padding: 20px; /* Innenabstand zur weißen Box */
+    padding: 40px; /* Innenabstand zur weißen Box */
     margin: 0; /* Kein externer Abstand */
     border: none; /* Keine Umrandung */
     box-shadow: none; /* Kein Schatten */
@@ -13,7 +12,7 @@ section.mtcontent {
 .mtproject {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Zwei Spalten */
-    gap: 30px; /* Abstand zwischen den Spalten */
+    gap: 100px; /* Abstand zwischen den Spalten */
     width: 100%;
     max-width: 100%;
 }
@@ -70,12 +69,12 @@ section.mtcontent {
 /* Bild */
 .mtproject-image {
     width: 100%; /* Bild füllt den Container aus */
-    height: auto; /* Seitenverhältnis beibehalten */
+    aspect-ratio: 1 / 1; /* Erzwingt quadratische Darstellung */
+    object-fit: cover; /* Bild wird gezoomt/beschnitten, um Quadrat zu füllen */
     display: block; /* Entfernt unerwünschten Inline-Abstand */
-    margin-bottom: 0; /* Kein Abstand unter dem Bild */
-    margin-top: 0; /* Kein Abstand über dem Bild */
-    cursor: pointer; /* Ändert den Mauszeiger in einen Zeiger (Hand) */
-    position: relative; /* Ermöglicht das Überlagern von Titeln und Beschreibungen */
+    margin: 0; /* Kein Abstand oben/unten */
+    cursor: pointer; /* Mauszeiger als Hand */
+    position: relative; /* Ermöglicht Überlagerung */
 }
 
 .mtcontent h2 {
