@@ -11,6 +11,7 @@ const manageImageList = {
         "school/1_visualisations/interior-cluster.jpg",
         "school/1_visualisations/interior-ground-floor.jpg",
         "uglyChair/1_visualisations/uglyChair.jpg",
+        "ArtistsDuplex/1_visualisations/Visual-Studio.jpg",
     ],
     plans: [
         "buildingBridges/plans/bridge-topography.jpg",
@@ -26,6 +27,9 @@ const manageImageList = {
         "school/plans/first-floor.jpg",
         "coralScraper/plans/floor-plan_overwater.jpg",
         "coralScraper/plans/floor-plan_underwater.jpg",
+        "ArtistsDuplex/plans/Ground-Floor.jpg",
+        "ArtistsDuplex/plans/Second-Floor.jpg",
+        "ArtistsDuplex/plans/Third-Floor.jpg",
     ],
     sections: [
         "buildingBridges/sections/self-sufficient.jpg",
@@ -34,6 +38,8 @@ const manageImageList = {
         "school/sections/section-AA.jpg",
         "school/sections/section-BB.jpg",
         "coralScraper/sections/section.jpg",
+        "ArtistsDuplex/sections/Section_AA.jpg",
+        "ArtistsDuplex/sections/Section_BB.jpg",
     ],
     pictograms: [
         "buildingBridges/pictograms/exploded-diagram.jpg",
@@ -47,6 +53,8 @@ const manageImageList = {
         "coralScraper/pictograms/order-in-disorder.jpg",
         "coralScraper/pictograms/axo.jpg",
         "coralScraper/pictograms/modules.jpg",
+        "ArtistsDuplex/pictograms/Concept.gif",
+        "ArtistsDuplex/pictograms/Circle.gif",
     ],
     elevations: [
         "calmont/elevations/Nordansicht.jpg",
@@ -57,10 +65,14 @@ const manageImageList = {
         "school/elevations/east-elevation.jpg",
         "school/elevations/south-elevation.jpg",
         "school/elevations/west-elevation.jpg",
+        "ArtistsDuplex/elevations/Elevation.jpg",
     ],
     modelPhotos: [
         "calmont/modelPhotos/Modell-200.jpg",
         "calmont/modelPhotos/Modell-500.jpg",
+        "ArtistsDuplex/modelPhotos/Axo_View.jpg",
+        "ArtistsDuplex/modelPhotos/Context_View.jpg",
+        "ArtistsDuplex/modelPhotos/Front_View.jpg",
 
     ],
 }
