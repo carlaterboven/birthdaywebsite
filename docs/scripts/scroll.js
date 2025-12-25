@@ -1,9 +1,15 @@
 
 const container = document.getElementById("imageContainer");
 const checkboxes = document.querySelectorAll("#filterBar input[type='checkbox']");
-
 const imageList = manageImageList;
+
 let images = [];
+let currentIndex = 0;
+let scrollPosition = 0;
+
+let scalingValue = 1; // Anfangsskalierung (Vollbild)
+const maxScale = 0.02; // Minimale Größe des Bildes beim Verkleinern
+const maxScrollPosition = (maxScale + 1) * 1000
 
 // Funktion: kombiniere ausgewählte Kategorien
 function updateImageList() {
@@ -29,6 +35,17 @@ function updateImageList() {
     });
 
     images = document.querySelectorAll('.image-container');
+
+    // nicht alle Bilder sind von Anfang an im Hintergrund sichtbar
+    images.forEach((image, index) => {
+        if (index == currentIndex) {
+            image.classList.add('active');
+        } else if (index == currentIndex +1) {
+            image.classList.add('background');
+        } else {
+            image.classList.add('inactive');
+        }
+    });
 }
 
 // Event Listener für Änderungen
@@ -37,30 +54,11 @@ checkboxes.forEach(cb => cb.addEventListener("change", updateImageList));
 // Initialer Aufruf
 updateImageList();
 
-let currentIndex = 0;
-let scrollPosition = 0;
-let scalingValue = 1; // Anfangsskalierung (Vollbild)
-const maxScale = 0.02; // Minimale Größe des Bildes beim Verkleinern
-const maxScrollPosition = (maxScale + 1) * 1000
 
-// nicht alle Bilder sind von Anfang an im Hintergrund sichtbar
-images.forEach((image, index) => {
-    if (index == currentIndex) {
-        image.classList.add('active');
-    } else if (index == currentIndex +1) {
-        image.classList.add('background');
-    } else {
-        image.classList.add('inactive');
-    }
-});
+function handleScroll(delta) {
+    scrollPosition += delta;  // delta>0: Scrollen nach unten, delta <0: Scrollen nach oben
 
-window.addEventListener('wheel', (e) => {
-    const delta = e.deltaY;
-    scrollPosition += delta; // delta>0: Scrollen nach unten, delta <0: Scrollen nach oben
-
-    if (scrollPosition < 0) {
-        scrollPosition = 0;
-    }
+    if (scrollPosition < 0) scrollPosition = 0;
 
     // Berechne den Skalierungswert basierend auf der Scrollposition
     scalingValue = 1 - Math.abs(scrollPosition) / 1000; // Die Skalierung kann von 1 bis maxScale (0.02) variieren
@@ -72,8 +70,8 @@ window.addEventListener('wheel', (e) => {
     // Wechseln der Bilder, wenn genügend gescrollt wurde
     // Wenn nach unten gescrollt (delta>0), Bild wechseln nach unten
     if (scalingValue <= maxScale && delta > 0) {
-        nextIndex = (currentIndex + 1) % images.length;
-        secondNextIndex = (currentIndex + 2) % images.length;
+        const nextIndex = (currentIndex + 1) % images.length;
+        const secondNextIndex = (currentIndex + 2) % images.length;
         images[currentIndex].classList.add('inactive');
         images[currentIndex].classList.remove('active');
         images[nextIndex].classList.add('active');
@@ -85,8 +83,8 @@ window.addEventListener('wheel', (e) => {
         scrollPosition = 0;
     }
     else if (scalingValue >= 1 && delta < 0) {
-        lastIndex = (currentIndex + 1) % images.length;
-        nextIndex = (currentIndex - 1 + images.length) % images.length;
+        const lastIndex = (currentIndex + 1) % images.length;
+        const nextIndex = (currentIndex - 1 + images.length) % images.length;
         images[currentIndex].classList.add('background');
         images[currentIndex].classList.remove('active');
         images[lastIndex].classList.add('inactive');
@@ -97,4 +95,75 @@ window.addEventListener('wheel', (e) => {
         currentIndex = nextIndex;
         scrollPosition = maxScrollPosition;
     }
+}
+
+let isPointerDown = false;
+let lastY = 0;
+let lastTime = 0;
+let velocity = 0;
+let momentumId = null;
+
+
+window.addEventListener("wheel", (e) => {
+    handleScroll(e.deltaY);
+}, { passive: true });
+
+
+function startMomentum() {
+    isPointerDown = false;
+
+    if (Math.abs(velocity) < 0.01) return;
+
+    const friction = 0.95;   // 0.90 = kurz, 0.97 = sehr lang
+    const multiplier = 16;  // höher = stärkerer Schwung
+
+    function step() {
+        velocity *= friction;
+        handleScroll(velocity * multiplier);
+
+        if (Math.abs(velocity) > 0.002) {
+            momentumId = requestAnimationFrame(step);
+        } else {
+            velocity = 0;
+            momentumId = null;
+        }
+    }
+
+    step();
+}
+
+
+container.addEventListener("pointerdown", e => {
+    isPointerDown = true;
+    lastY = e.clientY;
+    lastTime = performance.now();
+    velocity = 0;
+
+    if (momentumId) {
+        cancelAnimationFrame(momentumId);
+        momentumId = null;
+    }
+
+    container.setPointerCapture(e.pointerId);
 });
+
+container.addEventListener("pointermove", e => {
+    if (!isPointerDown) return;
+    if (e.pointerType === "mouse" && e.buttons !== 1) return;
+
+    const now = performance.now();
+    const dy = lastY - e.clientY;
+    const dt = now - lastTime || 16;
+
+    lastY = e.clientY;
+    lastTime = now;
+
+    const delta = Math.max(-60, Math.min(60, dy));
+
+    handleScroll(delta);
+
+    velocity = delta / dt;
+});
+
+container.addEventListener("pointerup", startMomentum);
+container.addEventListener("pointercancel", startMomentum);

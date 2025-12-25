@@ -37,7 +37,7 @@ const manageImageList = {
         "calmont/sections/Schnitt-BB.jpg",
         "school/sections/section-AA.jpg",
         "school/sections/section-BB.jpg",
-        "coralScraper/sections/section.jpg",
+        "coralScraper/sections/section.png",
         "ArtistsDuplex/sections/Section_AA.jpg",
         "ArtistsDuplex/sections/Section_BB.jpg",
     ],
